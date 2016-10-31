@@ -32,7 +32,7 @@ class NumFinder
   end
 
   def find_by_array_sub
-    Array(MIN_NUMBER..MAX_NUMBER).shuffle - @numbers
+    Array(MIN_NUMBER..MAX_NUMBER) - @numbers
   end
 end
 
