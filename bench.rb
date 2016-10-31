@@ -19,4 +19,10 @@ Benchmark.bm 20 do |r|
     finder.take
     finder.send(:find_by_array_sub)
   end
+
+  # # too late
+  # r.report 'find_by_each_compare' do
+  #   finder.take
+  #   finder.send(:find_by_each_compare)
+  # end
 end

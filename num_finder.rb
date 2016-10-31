@@ -34,6 +34,13 @@ class NumFinder
   def find_by_array_sub
     Array(MIN_NUMBER..MAX_NUMBER) - @numbers
   end
+
+  def find_by_each_compare
+    Array(MIN_NUMBER..MAX_NUMBER).each do |n|
+      found = @numbers.find {|m| n == m}.nil?
+      return found if found
+    end
+  end
 end
 
 if __FILE__ == $0

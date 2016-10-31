@@ -60,4 +60,15 @@ describe NumFinder do
       expect(numbers.find {|n| n == selected_number}).to be_nil
     end
   end
+
+  describe '.find_by_each_compare' do
+    it 'returns taken number' do
+      finder = NumFinder.new
+      finder.take
+      finder.send(:find_by_each_compare)
+      selected_number = finder.instance_variable_get(:@selected_number)
+      numbers = finder.instance_variable_get(:@numbers)
+      expect(numbers.find {|n| n == selected_number}).to be_nil
+    end
+  end
 end
