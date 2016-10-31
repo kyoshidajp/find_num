@@ -20,6 +20,7 @@ describe NumFinder do
       it 'returns 3' do
         finder = NumFinder.new
         finder.instance_eval do
+          NumFinder::MAX_NUMBER = 5
           @numbers = [1, 5, 2, 4]
         end
         expect(finder.find).to eq 3

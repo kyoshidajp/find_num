@@ -28,8 +28,7 @@ class NumFinder
 
   def find_by_subtraction
     total = @numbers.inject(:+)
-    max = @numbers.length + 1
-    @find_number = Array(1..max).inject(:+) - total
+    @find_number = Array(MIN_NUMBER..MAX_NUMBER).inject(:+) - total
   end
 
   def find_by_array_sub
