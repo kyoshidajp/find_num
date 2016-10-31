@@ -12,8 +12,7 @@ class NumFinder
   end
 
   def find
-    return @find_number unless @find_number.nil?
-    find_by_subtraction
+    @find_number ||= find_by_subtraction
   end
 
   def debug
@@ -28,7 +27,7 @@ class NumFinder
 
   def find_by_subtraction
     total = @numbers.inject(:+)
-    @find_number = Array(MIN_NUMBER..MAX_NUMBER).inject(:+) - total
+    Array(MIN_NUMBER..MAX_NUMBER).inject(:+) - total
   end
 
   def find_by_array_sub
