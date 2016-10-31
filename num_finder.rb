@@ -13,9 +13,7 @@ class NumFinder
 
   def find
     return @find_number unless @find_number.nil?
-    total = @numbers.inject(:+)
-    max = @numbers.length + 1
-    @find_number = Array(1..max).inject(:+) - total
+    find_by_subtraction
   end
 
   def debug
@@ -24,6 +22,18 @@ class NumFinder
       selected_number: #{@selected_number}
       find_number: #{@find_number}
     EOS
+  end
+
+  private
+
+  def find_by_subtraction
+    total = @numbers.inject(:+)
+    max = @numbers.length + 1
+    @find_number = Array(1..max).inject(:+) - total
+  end
+
+  def find_by_array_sub
+    Array(MIN_NUMBER..MAX_NUMBER).shuffle - @numbers
   end
 end
 
