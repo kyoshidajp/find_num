@@ -32,9 +32,9 @@ describe NumFinder do
         finder = NumFinder.new
         finder.take
         finder.find
-        selected_number = finder.instance_variable_get(:@selected_number)
+        find_number = finder.instance_variable_get(:@find_number)
         numbers = finder.instance_variable_get(:@numbers)
-        expect(numbers.find {|n| n == selected_number}).to be_nil
+        expect(numbers.find {|n| n == find_number}).to be_nil
       end
     end
   end
@@ -44,9 +44,9 @@ describe NumFinder do
       finder = NumFinder.new
       finder.take
       finder.send(:find_by_subtraction)
-      selected_number = finder.instance_variable_get(:@selected_number)
+      find_number = finder.instance_variable_get(:@find_number)
       numbers = finder.instance_variable_get(:@numbers)
-      expect(numbers.find {|n| n == selected_number}).to be_nil
+      expect(numbers.find {|n| n == find_number}).to be_nil
     end
   end
 
@@ -55,9 +55,9 @@ describe NumFinder do
       finder = NumFinder.new
       finder.take
       finder.send(:find_by_array_sub)
-      selected_number = finder.instance_variable_get(:@selected_number)
+      find_number = finder.instance_variable_get(:@find_number)
       numbers = finder.instance_variable_get(:@numbers)
-      expect(numbers.find {|n| n == selected_number}).to be_nil
+      expect(numbers.find {|n| n == find_number}).to be_nil
     end
   end
 
@@ -66,9 +66,9 @@ describe NumFinder do
       finder = NumFinder.new
       finder.take
       finder.send(:find_by_each_compare)
-      selected_number = finder.instance_variable_get(:@selected_number)
+      find_number = finder.instance_variable_get(:@find_number)
       numbers = finder.instance_variable_get(:@numbers)
-      expect(numbers.find {|n| n == selected_number}).to be_nil
+      expect(numbers.find {|n| n == find_number}).to be_nil
     end
   end
 end
