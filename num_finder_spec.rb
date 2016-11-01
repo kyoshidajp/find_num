@@ -30,11 +30,11 @@ describe NumFinder do
     context 'when random array is set automatically' do
       it 'returns taken number' do
         finder = NumFinder.new
-        finder.take
+        finder.pick_up
         finder.find
-        find_number = finder.instance_variable_get(:@find_number)
+        found_number = finder.instance_variable_get(:@found_number)
         numbers = finder.instance_variable_get(:@numbers)
-        expect(numbers.find {|n| n == find_number}).to be_nil
+        expect(numbers.find {|n| n == found_number}).to be_nil
       end
     end
   end
@@ -42,33 +42,33 @@ describe NumFinder do
   describe '.find_by_subtraction' do
     it 'returns taken number' do
       finder = NumFinder.new
-      finder.take
+      finder.pick_up
       finder.send(:find_by_subtraction)
-      find_number = finder.instance_variable_get(:@find_number)
+      found_number = finder.instance_variable_get(:@found_number)
       numbers = finder.instance_variable_get(:@numbers)
-      expect(numbers.find {|n| n == find_number}).to be_nil
+      expect(numbers.find {|n| n == found_number}).to be_nil
     end
   end
 
   describe '.find_by_array_sub' do
     it 'returns taken number' do
       finder = NumFinder.new
-      finder.take
+      finder.pick_up
       finder.send(:find_by_array_sub)
-      find_number = finder.instance_variable_get(:@find_number)
+      found_number = finder.instance_variable_get(:@found_number)
       numbers = finder.instance_variable_get(:@numbers)
-      expect(numbers.find {|n| n == find_number}).to be_nil
+      expect(numbers.find {|n| n == found_number}).to be_nil
     end
   end
 
   describe '.find_by_each_compare' do
     it 'returns taken number' do
       finder = NumFinder.new
-      finder.take
+      finder.pick_up
       finder.send(:find_by_each_compare)
-      find_number = finder.instance_variable_get(:@find_number)
+      found_number = finder.instance_variable_get(:@found_number)
       numbers = finder.instance_variable_get(:@numbers)
-      expect(numbers.find {|n| n == find_number}).to be_nil
+      expect(numbers.find {|n| n == found_number}).to be_nil
     end
   end
 end

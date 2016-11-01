@@ -7,19 +7,19 @@ class NumFinder
     @numbers = Array(MIN_NUMBER..MAX_NUMBER).shuffle
   end
 
-  def take
-    @selected_number ||= @numbers.delete_at(rand(@numbers.length))
+  def pick_up
+    @picked_up_number ||= @numbers.delete_at(rand(@numbers.length))
   end
 
   def find
-    @find_number ||= find_by_subtraction
+    @found_number ||= find_by_subtraction
   end
 
-  def debug
+  def output
     print <<-EOS
       numbers: #{@numbers}
-      selected_number: #{@selected_number}
-      find_number: #{@find_number}
+      picked_up_number: #{@picked_up_number}
+      found_number: #{@found_number}
     EOS
   end
 
@@ -44,7 +44,7 @@ end
 
 if __FILE__ == $0
   finder = NumFinder.new
-  finder.take
+  finder.pick_up
   finder.find
-  finder.debug
+  finder.output
 end

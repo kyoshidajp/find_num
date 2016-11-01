@@ -30,15 +30,15 @@ An output example:
 
 ```
 numbers: [970, 870, 657, 612, 810, ... ]
-selected_number: 94
-find_number: 94
+picked_up_number: 94
+found_number: 94
 ```
 
 `numbers` is an random array which is picked up an arbitrary number.
   
-`selected_number` is picked up number from the array.
+`picked_up_number` is picked up number from the array.
 
-`find_number` is found number.
+`found_number` is found number.
 
 ## Licence
 
