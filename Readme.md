@@ -40,10 +40,6 @@ found_number: 94
 
 `found_number` is found number.
 
-## Licence
-
-[MIT License](https://github.com/kyoshidajp/find_num/blob/master/LICENSE)
-
 ## Author
 
 [kyoshidajp](https://github.com/kyoshidajp)
