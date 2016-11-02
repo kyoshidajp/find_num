@@ -31,7 +31,7 @@ class NumFinder
   end
 
   def find_by_array_sub
-    Array(MIN_NUMBER..MAX_NUMBER) - @numbers
+    (Array(MIN_NUMBER..MAX_NUMBER) - @numbers).first
   end
 
   def find_by_each_compare
