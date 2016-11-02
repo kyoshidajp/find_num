@@ -8,9 +8,14 @@ describe NumFinder do
     it 'should array is shuffled' do
       finder1 = NumFinder.new
       finder2 = NumFinder.new
+      numbers1 = finder1.instance_variable_get(:@numbers)
+      numbers2 = finder2.instance_variable_get(:@numbers)
       sorted_array = Array(NumFinder::MIN_NUMBER..NumFinder::MAX_NUMBER)
-      expect(finder1.instance_variable_get(:@numbers)).not_to eq sorted_array
-      expect(finder2.instance_variable_get(:@numbers)).not_to eq sorted_array
+
+      # carefully check
+      not_same_order1 = sorted_array != numbers1
+      not_same_order2 = sorted_array != numbers2
+      expect(not_same_order1 && not_same_order2).to eq true
     end
   end
 
