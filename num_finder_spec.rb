@@ -19,6 +19,17 @@ describe NumFinder do
     end
   end
 
+  describe '.pick_up' do
+
+    it 'returns random number' do
+      finder1 = NumFinder.new
+      finder2 = NumFinder.new
+      found_number1 = finder1.pick_up
+      found_number2 = finder2.pick_up
+      expect(found_number1 != found_number2).to eq true
+    end
+  end
+
   describe '.find' do
 
     context 'when random array is set automatically' do
