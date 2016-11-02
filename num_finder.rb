@@ -35,9 +35,9 @@ class NumFinder
   end
 
   def find_by_each_compare
+    h = @numbers.zip(@numbers).to_h
     Array(MIN_NUMBER..MAX_NUMBER).each do |n|
-      found = @numbers.find {|m| n == m}.nil?
-      return found if found
+      return n unless h.key?(n)
     end
   end
 end
