@@ -25,4 +25,9 @@ Benchmark.bm 20 do |r|
   #   finder.pick_up
   #   finder.send(:find_by_each_compare)
   # end
+
+  r.report 'find_by_c' do
+    finder.pick_up
+    finder.send(:find_by_c)
+  end
 end

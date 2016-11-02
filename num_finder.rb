@@ -1,3 +1,11 @@
+require 'ffi'
+
+module FindC
+  extend FFI::Library
+  ffi_lib './c/find.so'
+  attach_function :find, [:int, :int, :pointer], :int
+end
+
 class NumFinder
 
   MIN_NUMBER = 1
@@ -39,6 +47,12 @@ class NumFinder
     Array(MIN_NUMBER..MAX_NUMBER).each do |n|
       return n unless h.key?(n)
     end
+  end
+
+  def find_by_c
+    ptr = FFI::MemoryPointer.new(:int, @numbers.size)
+    ptr.write_array_of_int(@numbers)
+    FindC.find(MIN_NUMBER, MAX_NUMBER, ptr)
   end
 end
 

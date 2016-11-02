@@ -65,4 +65,16 @@ describe NumFinder do
       expect(found_number).to be <= NumFinder::MAX_NUMBER
     end
   end
+
+  describe '.find_by_c' do
+    it 'returns taken number' do
+      finder = NumFinder.new
+      finder.pick_up
+      found_number = finder.send(:find_by_c)
+      numbers = finder.instance_variable_get(:@numbers)
+      expect(numbers.find {|n| n == found_number}).to be_nil
+      expect(found_number).to be >= NumFinder::MIN_NUMBER
+      expect(found_number).to be <= NumFinder::MAX_NUMBER
+    end
+  end
 end

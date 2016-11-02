@@ -1,1 +1,6 @@
 .idea
+
+# bundler state
+/.bundle
+/vendor/bundle/
+/vendor/ruby/
