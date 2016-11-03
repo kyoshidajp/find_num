@@ -9,25 +9,21 @@ Benchmark.bm 20 do |r|
   finder.instance_eval do
     @numbers = Array(1..BIG_NUMBER).shuffle
   end
+  finder.pick_up
   
   r.report 'find_by_subtraction' do
-    finder.pick_up
     finder.send(:find_by_subtraction)
   end
 
   r.report 'find_by_array_sub' do
-    finder.pick_up
     finder.send(:find_by_array_sub)
   end
 
-  # # too late
-  # r.report 'find_by_each_compare' do
-  #   finder.pick_up
-  #   finder.send(:find_by_each_compare)
-  # end
+  r.report 'find_by_each_compare' do
+    finder.send(:find_by_each_compare)
+  end
 
   r.report 'find_by_c' do
-    finder.pick_up
     finder.send(:find_by_c)
   end
 end
