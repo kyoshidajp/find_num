@@ -20,10 +20,24 @@ And if picked up number is 3, then the array is the following.
 
 The program could find 3 from this array.
 
+## Requirement
+
+- Ruby(MRI) 2.2.4 or higher
+
 ## Usage
 
+### Setup
+
+Run `bundle install`. Like this.
+
 ```
-ruby num_finder.rb
+bundle install --path vendor/bundle
+```
+
+## Run
+
+```
+bundle exec ruby num_finder.rb
 ```
 
 An output example:
@@ -39,6 +53,16 @@ found_number: 94
 `picked_up_number` is picked up number from the array.
 
 `found_number` is found number.
+
+### Run RSpec
+
+```
+bundle exec rspec num_finder_spec.rb
+```
+
+## Discussion
+
+See [Discussion](https://github.com/kyoshidajp/find_num/wiki/Discussion)
 
 ## Author
 
